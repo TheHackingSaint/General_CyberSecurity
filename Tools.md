@@ -144,4 +144,156 @@ A compact reference of common tools and commands used across TryHackMe, eJPT, an
 
 ---
 
-If you want, I can continue adding more eJPT, Metasploit, Linux priv‑esc, and TryHackMe common commands.
+
+## **15. Netcat**
+
+* **Tool:** nc
+* **Command:** `nc -lvnp <port>`
+* **Purpose:** Listener for reverse shells.
+* **Meaning:** Waits for incoming connections.
+* **Description:** Used heavily in exploitation for shell access.
+
+---
+
+## **16. Nmap**
+
+* **Tool:** nmap
+* **Command:** `nmap -sC -sV <IP>`
+* **Purpose:** Service and version detection.
+* **Meaning:** Runs default scripts and identifies versions.
+* **Description:** First step in enumeration.
+
+---
+
+## **17. Gobuster / Dirsearch**
+
+* **Tool:** gobuster
+* **Command:** `gobuster dir -u <URL> -w <wordlist>`
+* **Purpose:** Directory brute forcing.
+* **Meaning:** Scans for hidden web paths.
+* **Description:** Used for web enumeration.
+
+---
+
+## **18. Hydra**
+
+* **Tool:** hydra
+* **Command:** `hydra -l user -P wordlist.txt <service>://<IP>`
+* **Purpose:** Password brute forcing.
+* **Meaning:** Attempts logins using credentials.
+* **Description:** Works on SSH/FTP/HTTP and many more.
+
+---
+
+## **19. LinPEAS**
+
+* **Tool:** linpeas.sh
+* **Command:** `./linpeas.sh`
+* **Purpose:** Automated Linux privilege‑escalation scan.
+* **Meaning:** Highlights misconfigurations.
+* **Description:** Finds kernel exploits, creds, SUIDs, etc.
+
+---
+
+## **20. WinPEAS**
+
+* **Tool:** winpeas.exe
+* **Command:** `winpeas.exe`
+* **Purpose:** Windows privilege escalation.
+* **Meaning:** Scans for vulnerabilities in system configs.
+* **Description:** Equivalent of LinPEAS for Windows.
+
+---
+
+## **21. Netstat**
+
+* **Tool:** netstat
+* **Command:** `netstat -tunlp`
+* **Purpose:** Show listening ports.
+* **Meaning:** Displays active connections.
+* **Description:** Helps find hidden services.
+
+---
+
+## **22. SUID Check**
+
+* **Command:** `find / -perm -4000 2>/dev/null`
+* **Purpose:** Identify SUID binaries.
+* **Meaning:** Lists binaries running as root.
+* **Description:** Common Linux priv‑esc point.
+
+---
+
+## **23. Crontab Check**
+
+* **Command:** `cat /etc/crontab`
+* **Purpose:** Look for scheduled tasks.
+* **Meaning:** Finds misconfigured jobs.
+* **Description:** Often leads to escalation through writable scripts.
+
+---
+
+## **24. SCP File Transfer**
+
+* **Tool:** scp
+* **Command:** `scp file user@IP:/path`
+* **Purpose:** Secure file transfer.
+* **Meaning:** Sends files over SSH.
+* **Description:** Useful for uploading priv‑esc scripts.
+
+---
+
+## **25. Netcat File Transfer**
+
+* **Command:** `nc -lvp 4444 > file` and `nc <IP> 4444 < file`
+* **Purpose:** Send/receive files.
+* **Meaning:** Simple data transfer using netcat.
+* **Description:** Works when SCP is unavailable.
+
+---
+
+## **26. Python Web Server**
+
+* **Tool:** python3
+* **Command:** `python3 -m http.server 8000`
+* **Purpose:** File hosting.
+* **Meaning:** Opens local HTTP server.
+* **Description:** Used for serving payloads.
+
+---
+
+## **27. Msfconsole**
+
+* **Tool:** Metasploit
+* **Command:** `msfconsole`
+* **Purpose:** Exploitation framework.
+* **Meaning:** Opens Metasploit CLI.
+* **Description:** Center of exploitation workflow.
+
+---
+
+## **28. Meterpreter Shell Commands**
+
+* **Commands:** `shell`, `download`, `upload`, `ps`, `getuid`
+* **Purpose:** Post‑exploitation actions.
+* **Description:** Used after gaining a session.
+
+---
+
+## **29. Enum4linux**
+
+* **Tool:** enum4linux
+* **Command:** `enum4linux -a <IP>`
+* **Purpose:** Enumerate SMB shares and users.
+* **Meaning:** Gathers domain and user info.
+* **Description:** Helpful for Windows boxes.
+
+---
+
+## **30. SMBClient**
+
+* **Tool:** smbclient
+* **Command:** `smbclient //<IP>/share`
+* **Purpose:** Connect to SMB shares.
+* **Meaning:** Opens SMB shell.
+* **Description:** Used for listing and downloading files.
